@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>C172S ES</title>
+    <link type="text/css" href="css/index.style1.css" rel="stylesheet">
+    <link type="text/css" href="css/index.style_support.css" rel="stylesheet">
+    <script src="js/index.library1.js"></script>
+    <script src="js/index.library2.js"></script>
+    <script src="js/index.dialogsp.js"></script>  
+    <script src="js/index.library3.js"></script> 
+    <script src="js/index.library4.js"></script> 
+    <script src="js/index.ds.js"></script> 
+    <script src="js/index.CSSelech.js"></script> 
+    <script src="js/index.library5.js"></script>
+    <!--các tệp js sẽ tải theo thứ tự từ trên xuống và ảnh hưởng đến bố cục trang web-->
+</head>
+
+<body id="C172S_Body">
+    <div id="svgSupport"> 
+        <img src="images/nosvg.8985f809.jpg" alt="no support for svg found"> 
+    </div>
+    <div id="header">
+        <div class="header_button" id="header_left">
+            <a href="https://sme.hust.edu.vn/" target="_blank">
+                <div id="aerospaceLogo">
+                    <img src="images/sme_logo.jpg" alt="UND Aerospace logo">
+                </div>
+                <h1 style="color:white">Hệ thống điện C172S</h1>
+            </a>
+        </div>
+        <div id="header_engine" class="header_button powerStatus">
+            <div id="sparkplug">
+            </div>
+            <p id="status_engine">
+                Engine:<br>
+                <span>Shutdown</span>
+            </p>
+        </div>
+        <div id="header_epu" class="header_button powerStatus">
+            <div id="epuIcon">
+                <span id="epuIconLeft">
+                    <svg version="1.1" id="epuicon" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32.564px" height="20.439px"
+                        viewBox="-5.918 3.334 32.564 20.439" enable-background="new -5.918 3.334 32.564 20.439"
+                        xml:space="preserve">
+                        
+                        <g>
+                            <path fill="#1E76BA" d="M17.696,17.12V9.988c0-1.225-1.188-1.406-1.894-1.406l-6.776-0.01H9.014V5.503
+		c0-1.044-0.85-1.894-1.894-1.894H1.358c-1.044,0-1.894,0.85-1.894,1.894v5.224h-3.702c-1.224,0-1.405,1.186-1.405,1.893v1.873
+		c0,0.707,0.184,1.893,1.405,1.893h3.703v5.224c0,1.044,0.85,1.894,1.894,1.894h5.765c1.044,0,1.894-0.85,1.894-1.894v-3.071H9.03
+		l6.775-0.008C16.509,18.525,17.696,18.344,17.696,17.12z">
+                            </path>
+                            <path fill="#010101" d="M7.123,23.773H1.358c-1.194,0-2.168-0.976-2.168-2.169v-4.946h-3.428c-1.068,0-1.681-0.79-1.681-2.168
+		v-1.873c0-1.378,0.612-2.168,1.682-2.168h3.428V5.503C-0.81,4.308,0.164,3.334,1.358,3.334h5.765c1.194,0,2.168,0.976,2.168,2.169
+		v2.795l6.514,0.011c1.378,0,2.168,0.611,2.168,1.682v7.132c0,1.067-0.79,1.681-2.168,1.681l-6.514,0.009v2.797
+		C9.291,22.8,8.317,23.773,7.123,23.773z M-4.238,11c-0.936,0-1.131,0.879-1.131,1.617v1.873c0,0.738,0.195,1.617,1.131,1.617h3.979
+		v5.497c0,0.893,0.726,1.618,1.616,1.618h5.765c0.893,0,1.617-0.728,1.617-1.618v-3.349l7.063-0.008c0.737,0,1.616-0.195,1.616-1.13
+		v-7.13c0-0.937-0.879-1.131-1.616-1.131l-7.052-0.01L8.739,8.573v-3.07c0-0.893-0.727-1.618-1.617-1.618H1.358
+		c-0.893,0-1.616,0.728-1.616,1.618V11H-4.238z">
+                            </path>
+                        </g>
+                    </svg>
+                </span>
+                <span id="epuIconRight">
+                    <svg version="1.1" id="epuicon" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32.564px" height="20.439px"
+                        viewBox="-5.918 3.334 32.564 20.439" enable-background="new -5.918 3.334 32.564 20.439"
+                        xml:space="preserve">
+                        <g>
+                            <path fill="#1E76BA" d="M24.964,10.725H21.26V5.503c0-1.044-0.851-1.894-1.896-1.894h-8.452c-1.044,0-1.894,0.85-1.894,1.894v3.069
+		l6.775,0.01c0.705,0,1.895,0.184,1.895,1.406v7.132c0,1.224-1.188,1.405-1.895,1.405l-6.775,0.008v3.071
+		c0,1.044,0.85,1.894,1.894,1.894h8.452c1.045,0,1.896-0.85,1.896-1.894v-5.224h3.702c1.226,0,1.405-1.186,1.405-1.893v-1.872
+		C26.369,11.91,26.187,10.725,24.964,10.725z">
+                            </path>
+                            <path fill="#010101" d="M19.366,23.773h-8.452c-1.193,0-2.169-0.976-2.169-2.169v-3.348l7.053-0.009
+		c0.738,0,1.617-0.195,1.617-1.13v-7.13c0-0.937-0.879-1.131-1.617-1.131L8.745,8.846V5.503c0-1.194,0.975-2.169,2.169-2.169h8.452
+		c1.195,0,2.169,0.976,2.169,2.169v4.946h3.429c1.067,0,1.683,0.79,1.683,2.168v1.873c0,1.378-0.613,2.168-1.683,2.168h-3.429v4.946
+		C21.535,22.8,20.561,23.773,19.366,23.773z M9.296,18.808v2.797c0,0.893,0.728,1.618,1.618,1.618h8.452
+		c0.895,0,1.618-0.728,1.618-1.618v-5.497h3.979c0.75,0,1.132-0.544,1.132-1.617v-1.874c0-1.073-0.382-1.617-1.132-1.617h-3.979
+		V5.503c0-0.893-0.728-1.618-1.618-1.618h-8.452c-0.893,0-1.618,0.728-1.618,1.618v2.795l6.502,0.011
+		c1.38,0,2.168,0.611,2.168,1.682v7.132c0,1.067-0.788,1.681-2.168,1.681L9.296,18.808z">
+                            </path>
+                        </g>
+                    </svg>
+                </span>
+            </div>
+            <p id="status_epu">
+                EPU:<br>
+                <span>Disconnected</span>
+            </p>
+        </div>
+        <div class="header_button" id="header_master"> 
+            <img class="button_pop" src="images/buttonpop.bbd2e005.png" alt="Button Popup Widget"> 
+            <img id="button_widget_master" src="images/button_master.20679169.png" alt="Master Button">
+            <p class="button_widget_text">Master</p>
+        </div>
+        <div class="header_button" id="header_breaker"> 
+            <img class="button_pop" src="images/buttonpop.bbd2e005.png" alt="Button Popup Widget"> 
+            <img id="button_widget_breaker" src="images/button_breaker.3db1ca59.png" alt="Breaker Button">
+            <p class="button_widget_text">Breakers</p>
+        </div>
+        <div class="header_button" id="header_switches"> 
+            <img class="button_pop" src="images/buttonpop.bbd2e005.png" alt="Button Popup Widget"> 
+            <img id="button_widget_switch" src="images/button_switch.1cec6825.png" alt="Switch Button">
+            <p class="button_widget_text">Switches</p>
+        </div>
+        <div class="header_button" id="header_menu"> 
+            <img id="menu_cog" src="images/button_menu.583da7e0.png" alt="Menu Button"> 
+            <img id="menu_down" src="images/button_menu_down.fed21fb1.png" alt="Menu Button">
+            <p id="button_widget_menu">Menu</p>
+        </div>
+    </div>
+    <div id="mainwrapper">
+        <div id="menu" class="menu_container">
+            <div class="menu_credits">
+                <p><br> <br> Made by<br> Minh Quan Phan &bull; Hong Minh Nguyen<br> 
+                    <a href="" target="_blank"></a>
+                    <br> For more detail question, contact:<br> Minh Quan Phan<br> 
+                    <a>quanphanminh19@gmail.com</a>
+                    <br> Phone Number: 0975.844.063 
+                </p>
+            </div>
+            <div id="disclaimer">
+                <p>
+                Trang web được thực hiện với mục đích giúp tìm hiểu và tương tác cơ bản
+                với sơ đồ hệ thống điện trên máy bay Cessna 172 Skyhawk.
+                </p>
+            </div>
+        </div>
+        <div id="main_svg_wrapper">
+            <div id="sound_wrapper"></div>
+            <div id="color_key">
+                <div id="color_key_innerwrap">
+                    <div id="color_key_battery">
+                        <span></span>
+                        <p>Battery</p>
+                    </div>
+                    <div id="color_key_alternator">
+                        <span></span>
+                        <p>Alternator</p>
+                    </div>
+                    <div id="color_key_standby_battery">
+                        <span></span>
+                        <p>Standby Battery</p>
+                    </div>
+                    <div id="color_key_epu">
+                        <span></span>
+                        <p>External Power Unit</p>
+                    </div> 
+                    <button class="awesome" id="toggle_names">Hide Labels</button>
+                </div>
+            </div>
+            <div id="svgwrapper"></div>
+        </div>
+        <div id="hitboxes">
+            <div style="height:50px;width:102px;top:4px;left:235px" id="rollover_pdm_hitbox">
+            </div>
+        </div>
+    </div>
+    <div id="dialog_text">
+        <div id="dialog_battery" data-title="Battery">
+            <p>
+                Pin chính 24 VDC- 8Ah được điều khiển bởi công tắc trong buồng lái. Pin chính có nhiệm vụ cấp nguồn cho máy đề khi khởi động động cơ và vận hành các thiết bị điện khi máy phát điện không hoạt động.
+            </p>
+        </div>
+        <div id="dialog_alternator" data-title="Alternator">
+            <p> 
+                Máy phát được dẫn động bởi động cơ và tạo ra điện 28VDC-60A để cấp cho hệ thống điện, có nhiệm vụ sạc nguồn cho pin chính và pin dự phòng trong quá trình bay.
+            </p>
+        </div>
+        <div id="dialog_eis_right" data-title="Engine Indication System">
+            <p>
+                Hiển thị thông số về điện thế và cường độ dòng điện được biểu diễn trên màn hình MFD. Điện áp bình thường khi máy phát hoạt động là 28 VDC. Nếu điện thế hiển thị cao hơn 32 VDC thì cánh bảo điện áp sẽ hiển thị màu đỏ. Đồng nghĩa với việc phi công cần ngắt nguồn từ máy phát. Nếu điện thế dưới 24.5 VDC thì cảnh báo điện áp cũng sẽ hiện màu đỏ, cảnh báo rằng vòng tua động cơ thấp và phi công cần tăng công suất động cơ hoặc ngắt nguồn.
+            </p>
+        </div>
+        <div id="dialog_eis_left" data-title="Engine Indication System">
+            <p> 
+                Hiển thị thông số về điện thế và cường độ dòng điện được biểu diễn trên màn hình MFD. Điện áp bình thường khi máy phát hoạt động là 28 Vdc. Nếu điện thế hiển thị cao hơn 32 Vdc thì cánh bảo điện áp sẽ hiển thị màu đỏ. Đồng nghĩa với việc phi công cần ngắt nguồn từ máy phát. Nếu điện thế dưới 24.5 Vdc thì cảnh báo điện áp cũng sẽ hiện màu đỏ, cảnh báo rằng vòng tua động cơ thấp và phi công cần tăng công suất động cơ hoặc ngắt nguồn.
+            </p>
+        </div>
+        <div id="dialog_starter" data-title="Starter">
+            <p>
+                Máy đề chỉ được kích hoạt để tạo đà để khởi động động cơ và được ngắt nguồn ngay khi động cơ tự duy trì.
+            </p>
+        </div>
+        <div id="dialog_starter_relay" data-title="Starter Relay">
+            <p>
+                Rơ-le máy đề được kích hoạt khi phi công xoay chìa khóa đến vị trí đề. Nguồn điện cho máy đề lấy trực tiếp từ pin hoặc từ máy phát trong quá trình bay.
+            </p>
+        </div>
+        <div id="dialog_ignition_switch" data-title="Ignition Switch">
+            <p>
+                Sử dụng ổ khóa 4 chân. Phi công xoay chìa cho phép nguồn điện được phân phối tới máy đề và nến đánh lửa động cơ.
+            </p>
+        </div>
+        <div id="dialog_acu" data-title="Alternator Control Unit">
+            <p>
+                Mạch quản lí điện áp ra của máy phát đảm bảo điện áp ra là 28 VDC bằng việc điều chỉnh dòng điện từ máy phát về giá trị cho phép. Mạch còn có nhiệm vụ ngắt dòng trong trường hợp điện thế cao hoặc thấp hơn giá trị cho phép.
+            </p>
+        </div>
+        <div id="dialog_alt_field_cb" data-title="ALT FIELD Circuit Breaker">
+            <p>Cầu dao tự ngắt khi dòng điện tới cuộn dây rơ-le máy phát vượt quá 5A.</p>
+        </div>
+        <div id="dialog_alternator_relay" data-title="Alternator Relay">
+            <p>
+                Rơ-le máy phát đóng điện giữa máy phát phát và hệ thống điện.
+            </p>
+        </div>
+        <div id="dialog_current_sensor" data-title="Current Sensor">
+            <p>
+                Cảm biến dòng điện hay "shunt", là thiết bị dùng để phát hiện hướng cũng như độ lớn của dòng điện qua mạch máy phát điện. Thông tin thu được từ 'shunt' được chuyển đến EIS - cái thể hiện trạng thái sạc và xả của pin.
+
+            </p>
+        </div>
+        <div id="dialog_pdm" data-title="Power Distribution Module">
+            <p>
+                Hộp điện (Junction box) bao gồm 4 rơ-le, mạch quản lí điện áp của hệ thống cấp nguồn cho máy bay. 
+            </p>
+        </div>
+        <div id="dialog_alt_master_switch" data-title="ALT MASTER Switch">
+            <p>
+                Công tắc đóng điện tới cuộn dây của rơ-le máy phát nhằm đóng nguồn từ máy phát tới hệ thống điện.
+            </p>
+        </div>
+        <div id="dialog_bat_master_switch" data-title="BAT MASTER Switch">
+            <p>
+                Công tắc của pin chính. Khi hoạt động bình thường, cả 2 bên công tắc (ALT và BAT) được bật cùng lúc. Tuy nhiên, công tắc BAT có thể được bật khi công tắc ALT tắt. Công tắc ALT sẽ không có dòng đi qua khi động cơ chưa hoạt động nên bật lên là không cần thiết.
+            </p>
+        </div>
+        <div id="dialog_battery_relay" data-title="Battery Relay">
+            <p>
+                Rơ-le pin chính đóng điện giữa pin và hệ thống điện. Bật công tắc BAT sẽ kéo theo rơ-le được cấp nguồn.
+            </p>
+        </div>
+        <div id="dialog_external_power_relay" data-title="External Power Relay">
+            <p>
+                Ngay khi công tắc BAT MASTER được bật thì cả rơ-le của nguồn bên ngoài và pin chính được đóng điện khi điện được cấp từ nguồn bên ngoài. Lúc này nguồn ngoài sẽ có chức năng như pin chính của máy bay, nhằm cấp nguồn cho hệ thống điện trên máy bay.
+            </p>
+        </div>
+        <div id="dialog_elec_bus_1" data-title="ELEC BUS 1">
+            <p>
+            Thanh đồng phân phối điện năng từ nguồn tới các thiết bị bơm nhiên liệu, đèn beacon, đèn landing, nguồn trong cabin, motor flap và hệ thống điện tử.
+            </p>
+        </div>
+        <div id="dialog_elec_bus_2" data-title="ELEC BUS 2">
+            <p>
+                Thanh đồng phân phối điện năng tới hệ thống chống đóng băng của ống pitot, đèn dẫn đường (nav), đèn khi lăn taxi, đèn chống va chạm (strobe), đèn cho bảng điều khiển của phi công và hệ thống điện tử.
+            </p>
+        </div>
+        <div id="dialog_ess_bus" data-title="ESS BUS">
+            <p>
+                Thanh đồng nhận điện năng được phân từ elec bus 1, 2 và từ pin dự phòng để cấp nguồn cho các thiết bị điện tử thiết yếu trong trường hợp không có nguồn điện cấp tới thanh AVN BUS 1 và 2.
+            </p>
+        </div>
+        <div id="dialog_x-feed_bus" data-title="X-FEED BUS">
+            <p>
+            Thanh đồng X-feed bus có chức năng phân phối điện tới cuộn dây của rơ-le máy phát, rơ-le máy đề và cấp nguồn nuôi mạch điều khiển ACU. Ngoài ra điện còn được phân phối đến các nến đánh lửa động cơ, cảm biến dòng điện trong mạch điều khiển hệ thống pin dự phòng và hệ thống cảnh báo.
+            </p>
+        </div>
+        <div id="dialog_avn_bus_1" data-title="AVN BUS 1">
+            <p>
+                Thanh đồng phân phối điện năng từ thanh bus chia điện 1 (elec bus1) đến các thiết bị điện tử PFD(primary flight display - màn hình chính điều khiển bay), ADC(air data computer - Hệ thống dữ liệu không khí) và AHRS(Attitude and heading reference system - hệ thống định vị thế và hướng bay), NAV1(hệ thống dẫn đường không vận 1) và ENG ( động cơ)
+            </p>
+        </div>
+        <div id="dialog_avn_bus_2" data-title="AVN BUS 2">
+            <p>
+                Thanh đồng phân phối điện năng từ thanh bus chia điện 2 (elec bus 2) đến các thiết bị điện tử MFD(multi flight display), XPNDR(ăng ten) NAV 2(hệ thống dẫn đường không vận 2), COMM2 (hệ thống thông tin liên lạc), AUDIO.
+            </p>
+        </div>
+        <div id="dialog_fuel_pump_cb" data-title="FUEL PUMP Circuit Breaker">
+            <p>
+            Cầu dao bảo vệ bơm nhiên liệu trong trường hợp dòng điện tới bơm vượt quá 5A.
+            </p>
+        </div>
+        <div id="dialog_fuel_pump_switch" data-title="FUEL PUMP Switch">
+            <p>
+                Công tắc gạt khi sử dụng bơm nhiên liệu.  
+            </p>
+        </div>
+        <div id="dialog_bcn_lt_cb" data-title="BCN LT Circuit Breaker">
+            <p>
+            Cầu dao sẽ ngắt dòng điện quá 5A đến để bảo vệ đèn chống va chạm (beacon).
+            </p>
+        </div>
+        <div id="dialog_bcn_lt_switch" data-title="BEACON Switch">
+            <p>
+                Công tắc BEACON được sử dụng bởi phi công để kích hoạt đèn hiệu nhấp nháy màu đỏ phía trên của cánh lái hướng. 
+            </p>
+        </div>
+        <div id="dialog_land_lt_cb" data-title="LAND LT Circuit Breaker">
+            <p>
+                Cầu dao sẽ ngắt dòng điện quá 10A đến để bảo vệ đèn hạ cánh và lăn taxi (landing và taxi).
+            </p>
+        </div>
+        <div id="dialog_land_lt_switch" data-title="LAND Switch">
+            <p>
+                Công tắc gạt khi sử dụng đèn hạ cánh và lăn taxi (landing và taxi).
+            </p>
+        </div>
+        <div id="dialog_cabin_lts_pwr_cb" data-title="CABIN LTS/PWR Circuit Breaker">
+            <p>
+            Cầu dao sẽ ngắt dòng điện quá 5A đến để bảo vệ hệ thống đèn điện trong cabin.
+            </p>
+        </div>
+        <div id="dialog_cabin_lts_pwr_switch" data-title="CABIN LTS/PWR Switch">
+            <p>
+            Công tắc gạt khi sử dụng hệ thống đèn điện trong cabin.
+            </p>
+        </div>
+        <div id="dialog_flaps_cb" data-title="FLAPS Circuit Breaker">
+            <p>
+            Cầu dao sẽ ngắt dòng điện quá 10A để bảo vệ motor flap.
+            </p>
+        </div>
+        <div id="dialog_avn_1_cb" data-title="AVN 1 Circuit Breaker">
+            <p>
+            Cầu dao tự ngắt dòng điện quá 15A để bảo vệ hệ thống điện tử.
+            </p>
+        </div>
+        <div id="dialog_avionics_bus_1_switch" data-title="AVIONICS BUS 1 Switch">
+            <p>
+            Công tắc gạt khi sử dụng AVN BUS 1 (chỉ bật khi nguồn điện ổn định để tránh gây hư hỏng các thiết bọ điện tử).
+            </p>
+        </div>
+        <div id="dialog_avn_2_cb" data-title="AVN 2 Circuit Breaker">
+        <p>
+            Cầu dao tự ngắt dòng điện quá 15A để bảo vệ hệ thống điện tử.
+        </p>
+        </div>
+        <div id="dialog_avionics_bus_2_switch" data-title="AVIONICS BUS 2 Switch">
+            <p>
+            Công tắc gạt khi sử dụng AVN BUS 2 (chỉ bật khi nguồn điện ổn định để tránh gây hư hỏng các thiết bị điện tử).
+            </p>
+        </div>
+        <div id="dialog_pitot_heat_cb" data-title="PITOT HEAT Circuit Breaker">
+            <p>
+            Cầu dao tự ngắt dòng điện quá 5A để bảo vệ hệ thống chống băng trên ống pitot.
+            </p>
+        </div>
+        <div id="dialog_pitot_heat_switch" data-title="PITOT HEAT Switch">
+            <p>
+            Công tắc gạt khi sử dụng hệ thống chống băng trên ống pitot.
+            </p>
+        </div>
+        <div id="dialog_nav_lts_cb" data-title="NAV LTS Circuit Breaker">
+            <p>
+            Cầu dao tự ngắt dòng điện quá 5A để bảo vệ đèn navigation (đèn để dẫn đường)
+            </p>
+        </div>
+        <div id="dialog_nav_lts_switch" data-title="NAV Switch">
+            <p>
+            Công tắc gạt khi sử dụng đèn để dẫn đường (navigation).
+            </p>
+        </div>
+        <div id="dialog_taxi_lt_cb" data-title="TAXI LT Circuit Breaker">
+            <p>
+            Cầu dao tự ngắt khi dòng điện vượt quá 10A để bảo vệ đèn để lăn taxi.
+            </p>
+        </div>
+        <div id="dialog_taxi_switch" data-title="TAXI Switch">
+            <p>
+                Công tắc gạt khi sử dụng đèn để lăn taxi.
+            </p>
+        </div>
+        <div id="dialog_strobe_lts_cb" data-title="STROBE LTS Circuit Breaker">
+            <p>
+            Cầu dao tự ngắt khi dòng điện vượt quá 5A để bảo vệ đèn chống va chạm (strobe). 
+            </p>
+        </div>
+        <div id="dialog_strobe_switch" data-title="STROBE Switch">
+            Công tắc gạt khi sử dụng đèn chống va chạm (strobe).
+        </div>
+        <div id="dialog_panel_lts_cb" data-title="PANEL LTS Circuit Breaker">
+            <p> 
+            Cầu dao tự ngắt khi dòng điện vượt quá 5A để bảo vệ đèn bảng điều khiển của phi công.
+            </p>
+        </div>
+        <div id="dialog_panel_lts_switch" data-title="PANEL LTS Switch">
+            <p>
+            Công tắc gạt sử dụng đèn bảng điều khiển của phi công. (Do web không thể hiện phần đèn nên phần công tắc này không hiển thị trên bảng điều khiển switch).
+            </p>
+        </div>
+        <div id="dialog_ab1_pfd_cb" data-title="PFD Circuit Breaker">
+            <p>
+            Cầu dao tự ngắt dòng điện vượt quá 5A để bảo vệ thiết bị GDU 1044 (Primary Flying Display).
+            </p>
+        </div>
+        <div id="dialog_ab1_adc_ahrs_cb" data-title="ADC AHRS Circuit Breaker">
+            <p>
+                Cầu dao tự ngắt dòng điện vượt quá 5A để bảo vệ thiết bị GDC 74A (Air Data Computer - máy tính dữ liệu không khí) và GRS 77 ( Attitude Heading Reference System - hệ thống định vị thế và hướng bay).
+            </p>
+        </div>
+        <div id="dialog_ab1_nav_1_eng_cb" data-title="NAV 1 ENG Circuit Breaker">
+            <p>
+                Cầu dao tự ngắt dòng điện vượt quá 5A để bảo vệ ăng-ten navigation và GEA 71( Engine/ Airfram Unit).
+            </p>
+        </div>
+        <div id="dialog_eb_pfd_cb" data-title="PFD Circuit Breaker">
+            <p>
+                Cầu dao tự ngắt dòng điện vượt quá 5A để bảo vệ thiết bị GDU 1044 (Primary Flying Display).
+            </p>
+        </div>
+        <div id="dialog_eb_adc_ahrs_cb" data-title="ADC AHRS Circuit Breaker">
+            <p>
+                Cầu dao tự ngắt dòng điện vượt quá 5A để bảo vệ thiết bị GDC 74A (Air Data Computer - Máy tính dữ liệu không khí) và GRS 77 ( Attitude Heading Reference System - hệ thống định vị thế và hướng bay).
+            </p>
+        </div>
+        <div id="dialog_eb_nav_1_eng_cb" data-title="NAV 1 ENG Circuit Breaker">
+            <p>
+                Cầu dao tự ngắt dòng điện vượt quá 5A để bảo vệ ăng-ten dẫn đường (navigation) và GEA 71( Engine/ Airfram Unit).
+            </p>
+        </div>
+        <div id="dialog_comm_1_cb" data-title="COMM 1 Circuit Breaker">
+            <p>
+                Cầu dao tự ngắt khi dòng điện vượt 5A để bảo ăng-ten liên lạc (communication) 1.
+            </p>
+        </div>
+        <div id="dialog_stdby_ind_lts_cb" data-title="STDBY IND LTS Circuit Breaker">
+            <p>
+            Cầu dao tự ngắt dòng điện vượt quá 5A để bảo vệ hệ thống đèn của đồng hồ cơ đo độ cao, vận tốc.
+            </p>
+        </div>
+        <div id="dialog_stdby_batt_cb" data-title="STDBY BATT circuit breaker">
+            <p>
+                Cầu dao tự ngắt dòng điện vượt quá 20A từ pin dự phòng đến các thiết bị điện tử thuộc thanh chia điện ess bus (essential bus)
+            </p>
+        </div>
+        <div id="dialog_mfd_cb" data-title="MFD Circuit Breaker">
+            <p>
+                Cầu dao tự ngắt dòng điện vượt quá 5A để bảo vệ thiết bị GDU 1044 (Multifunction Flying Display).
+            </p>
+        </div>
+        <div id="dialog_xpndr_cb" data-title="XPNDR Circuit Breaker">
+            <p>
+                Cầu dao tự ngắt dòng điện vượt quá 5A để bảo vệ thiết bị GTX 33(Transponder-máy thu phát rada).
+            </p>
+        </div>
+        <div id="dialog_nav_2_cb" data-title="NAV 2 Circuit Breaker">
+            <p>
+                Cầu dao tự ngắt dòng điện vượt quá 5A để bảo vệ ăng-ten dẫn đường (navigation) 2.
+            </p>
+        </div>
+        <div id="dialog_comm_2_cb" data-title="COMM 2 Circuit Breaker">
+            <p>
+                Cầu dao tự ngắt dòng điện vượt quá 5A để bảo vệ ăng-ten liên lạc (communication) 2.
+            </p>
+        </div>
+        <div id="dialog_audio_cb" data-title="AUDIO Circuit Breaker">
+            <p>
+                Cầu dao tự ngắt dòng điện vượt quá 5A để bảo vệ thiết bị GMA 1347 (Audio).
+            </p>
+        </div>
+        <div id="dialog_standby_battery" data-title="Standby Battery">
+            <p>
+                Pin dự phòng được dùng trong trường hợp cả pin chính và máy phát không còn hoạt động. Nguồn điện từ pin dự phòng dùng để cấp điện cho các thiết bị điện tử của thanh chia điện ess bus. Pin dự phòng có thể cấp nguồn liên tục trong 30 phút. Pin dự phòng luôn được để ở chế độ chờ.
+            </p>
+        </div>
+        <div id="dialog_standby_battery_controller" data-title="Standby Battery Controller">
+            <p>
+                Mạch điều khiển hệ thống pin dự phòng quản lí nguồn điện cấp tới tải và nguồn điện từ máy phát và pin chính để sạc cho pin dự phòng.
+            </p>
+        </div>
+        <div id="dialog_stby_batt_switch" data-title="STBY BATT Switch">
+            <p>
+                Công tắc 3 nấc trong đó: khi gạt lên trên để kích hoạt pin dự phòng ngay, để ở giữa để cho pin trong trạng thái chờ và khi gạt xuống dưới để kiểm tra tình trạng sẵn sàng của pin trong 10 giây.
+            </p>
+        </div>
+        <div id="dialog_overheat_switch" data-title="Test Overheat Switch">
+            <p>
+                Công tắc bảo vệ tự ngắt dòng điện từ pin dư phòng trong trường hợp phi công giữ công tắc ở trạng thái kiểm tra quá 10 giây.
+            </p>
+        </div>
+        <div id="dialog_test_load" data-title="Test Load">
+            <p>
+                Trong khi kiểm tra pin dự phòng (standby battery), đặt một tải lên pin dự phòng để đảm bảo rằng mức năng lượng sẵn có là đủ và pin đó có thể cung cấp một điện áp không đổi
+            </p>
+        </div>
+        <div id="dialog_test_led" data-title="Test LED">
+            <p> 
+                TEST LED sẽ được phát sáng khi công tắc STBY BATT được di chuyển đến vị trí TEST.
+                Để kiểm tra pin dự phòng, công tắc nên được giữ ở vị trí TEST trong 10 giây.
+                Trong quá trình kiểm tra, nếu LED không sáng liên tục, thì quá trình kiểm tra pi dự phòng coi như thất bại.
+            </p>
+        </div>
+        <div id="dialog_warn_cb" data-title="WARN Circuit Breaker">
+            <p>Năng lượng được cung cấp cho cầu chì WARN trên thanh bus chia điện X-FEED để cảnh báo thất tốc, ELT, điện áp ở thanh chia điện chính (main bus), đồng hồ đếm giờ, rơ-le bộ đề, pin dự phòng (standby battery), và các mạch cảm biến thanh bus chia điện chính (main bus).
+            </p>
+        </div>
+    </div>
+    <!--Thuộc tính data-* không ảnh hưởng đến cách trang web 
+    hiển thị hoặc hoạt động bởi chính nó. Nó chỉ lưu trữ dữ liệu 
+    để có thể truy cập và sử dụng trong mã JavaScript -->
+    <div id="buttonbox">
+        <div id="master_buttons">
+            <div id="wrapper_master_switch">
+                <div id="master_battery_switch" class="master_switch_off"></div>
+                <div id="master_alternator_switch" class="master_switch_off"></div>
+            </div>
+            <div id="wrapper_avionics_switch">
+                <div id="master_avionics1_switch" class="avionics_switch_off"></div>
+                <div id="master_avionics2_switch" class="avionics_switch_off"></div>
+            </div>
+            <div id="standbybattery_wrapper">
+                <div class="standbybattery_arm"></div>
+                <div class="standbybattery"></div>
+                <div class="standbybattery_test"></div>
+            </div>
+            <div id="standby_test_led"></div>
+        </div>
+        <div id="breaker_buttons">
+            <div id="breaker_buttons_x_feed_bus">
+                <div id="breaker_x_feed_alt_field" class="breaker5"></div>
+                <div id="breaker_x_feed_warn" class="breaker5"></div>
+            </div>
+            <div id="breaker_buttons_elec_bus_1">
+                <div id="breaker_fuel_pump" class="breaker5"></div>
+                <div id="breaker_bcn_lt" class="breaker5"></div>
+                <div id="breaker_land_lt" class="breaker10"></div>
+                <div id="breaker_cabin_lts_pwr" class="breaker5"></div>
+                <div id="breaker_flaps" class="breaker10"></div>
+                <div id="breaker_avn_1" class="breaker15"></div>
+            </div>
+            <div id="breaker_buttons_elec_bus_2">
+                <div id="breaker_pitot_heat" class="breaker5"></div>
+                <div id="breaker_nav_lts" class="breaker5"></div>
+                <div id="breaker_taxi_lt" class="breaker10"></div>
+                <div id="breaker_strobe_lts" class="breaker5"></div>
+                <div id="breaker_panel_lts" class="breaker5"></div>
+                <div id="breaker_avn_2" class="breaker15"></div>
+            </div>
+            <div id="breaker_button_right">
+                <div id="breaker_buttons_ess_bus">
+                    <div id="breaker_ess_pfd" class="breaker5"></div>
+                    <div id="breaker_ess_adc_arhs" class="breaker10"></div>
+                    <div id="breaker_ess_nav_1_eng" class="breaker15"></div>
+                    <div id="breaker_ess_comm_1" class="breaker5"></div>
+                    <div id="breaker_ess_stdby_ind_lts" class="breaker5"></div>
+                    <div id="breaker_ess_stdby_batt" class="breaker20"></div>
+                </div>
+                <div id="breaker_buttons_avn_1_bus">
+                    <div id="breaker_avn_1_pfd" class="breaker5"></div>
+                    <div id="breaker_avn_1_adc_arhs" class="breaker10"></div>
+                    <div id="breaker_avn_1_nav_1_eng" class="breaker15"></div>
+                </div>
+                <div id="breaker_buttons_avn_2_bus">
+                    <div id="breaker_avn_2_mfd" class="breaker5"></div>
+                    <div id="breaker_avn_2_xpndr" class="breaker5"></div>
+                    <div id="breaker_avn_2_nav_2" class="breaker5"></div>
+                    <div id="breaker_avn_2_comm_2" class="breaker5"></div>
+                    <div id="breaker_avn_2_audio" class="breaker5"></div>
+                </div>
+            </div>
+        </div>
+        <div id="switch_buttons">
+            <div id="switch_buttons_top">
+                <div id="switch_bcn_lt" class="switch">
+                    <span>Beacon</span>
+                </div>
+                <div id="switch_land_lt" class="switch">
+                    <span>Land</span>
+                </div>
+                <div id="switch_taxi_lt" class="switch">
+                    <span>Taxi</span>
+                </div>
+                <div id="switch_nav_lts" class="switch">
+                    <span>Nav</span>
+                </div>
+                <div id="switch_strobe_lts" class="switch">
+                    <span>Strobe</span>
+                </div>
+            </div>
+            <div id="switch_buttons_bottom">
+                <div id="switch_fuel_pump" class="switch">
+                    <span>Fuel Pump</span>
+                </div>
+                <div id="switch_pitot_heat" class="switch">
+                    <span>Pitot Heat</span>
+                </div>
+                <div id="switch_cabin_lts_pwr" class="switch">
+                    <span>Cabin PWR 12V</span>
+                </div>
+            </div>
+            <div id="switch_pulselite" class="pulselite_off">
+            </div>
+        </div>
+    </div> 
+    <audio id="audio_master_on" preload>
+        <source src="sound/masterOn.2b86813d.wav">
+        <source src="sound/masterOn.01244031.mp3">
+    </audio> 
+    <audio id="audio_master_off" preload>
+        <source src="sound/masterOff.f4c0304d.wav">
+        <source src="sound/masterOff.0ae1f300.mp3">
+    </audio>
+    <audio id="audio_breaker_open" preload>
+        <source src="sound/cbOpen.4a9465d0.wav">
+        <source src="sound/cbOpen.0bf43322.mp3">
+    </audio> 
+    <audio id="audio_breaker_closed" preload>
+        <source src="sound/cbClosed.80012ea4.wav">
+        <source src="sound/cbClosed.a7785111.mp3">
+    </audio> 
+    <audio id="audio_switch_open" preload>
+        <source src="sound/toggleOn.b280e4dc.wav">
+        <source src="sound/toggleOn.49a4b541.mp3">
+    </audio> 
+    <audio id="audio_switch_closed" preload>
+        <source src="sound/toggleOff.10ce1e86.wav">
+        <source src="sound/toggleOff.152a895b.mp3">
+    </audio> 
+    <audio id="audio_sbatt_arm" preload>
+        <source src="sound/stbyBattArm.9cb6b7dc.wav">
+        <source src="sound/stbyBattArm.8eacd047.mp3">
+    </audio> 
+    <audio id="audio_sbatt_off" preload>
+        <source src="sound/stbyBattOff.5d21f072.wav">
+        <source src="sound/stbyBattOff.7e792c4d.mp3">
+    </audio> 
+    <audio id="audio_sbatt_test" preload>
+        <source src="sound/stbyBattTest.c0062656.wav">
+        <source src="sound/stbyBattTest.8c88a3e4.mp3">
+    </audio>
+</body>
+</html>
